@@ -105,23 +105,23 @@ func (bm BlobMetadata) MarshalXML(enc *xml.Encoder, start xml.StartElement) erro
 // BlobProperties contains various properties of a blob
 // returned in various endpoints like ListBlobs or GetBlobProperties.
 type BlobProperties struct {
-	LastModified          string   `xml:"Last-Modified"`
-	Etag                  string   `xml:"Etag"`
-	ContentMD5            string   `xml:"Content-MD5"`
-	ContentLength         int64    `xml:"Content-Length"`
-	ContentType           string   `xml:"Content-Type"`
-	ContentEncoding       string   `xml:"Content-Encoding"`
-	CacheControl          string   `xml:"Cache-Control"`
-	ContentLanguage       string   `xml:"Cache-Language"`
-	BlobType              BlobType `xml:"x-ms-blob-blob-type"`
-	SequenceNumber        int64    `xml:"x-ms-blob-sequence-number"`
-	CopyID                string   `xml:"CopyId"`
-	CopyStatus            string   `xml:"CopyStatus"`
-	CopySource            string   `xml:"CopySource"`
-	CopyProgress          string   `xml:"CopyProgress"`
-	CopyCompletionTime    string   `xml:"CopyCompletionTime"`
-	CopyStatusDescription string   `xml:"CopyStatusDescription"`
-	LeaseStatus           string   `xml:"LeaseStatus"`
+	LastModified          string   `xml:"Last-Modified",header:"Last-Modified"`
+	Etag                  string   `xml:"Etag",header:"Etag"`
+	ContentMD5            string   `xml:"Content-MD5",header:"Content-MD5"`
+	ContentLength         int64    `xml:"Content-Length",header:"Content-Length"`
+	ContentType           string   `xml:"Content-Type",header:"Content-Type"`
+	ContentEncoding       string   `xml:"Content-Encoding",header:"Content-Encoding"`
+	CacheControl          string   `xml:"Cache-Control",header:"Cache-Control"`
+	ContentLanguage       string   `xml:"Content-Language",header:"Content-Language"`
+	BlobType              BlobType `xml:"x-ms-blob-blob-type",header:"x-ms-blob-blob-type"`
+	SequenceNumber        int64    `xml:"x-ms-blob-sequence-number",header:"x-ms-blob-sequence-number"`
+	CopyID                string   `xml:"CopyId",header:"x-ms-copy-id"`
+	CopyStatus            string   `xml:"CopyStatus",header:"x-ms-copy-status"`
+	CopySource            string   `xml:"CopySource",header:"x-ms-copy-source"`
+	CopyProgress          string   `xml:"CopyProgress",header:"x-ms-copy-progress"`
+	CopyCompletionTime    string   `xml:"CopyCompletionTime",header:"x-ms-copy-completion-time"`
+	CopyStatusDescription string   `xml:"CopyStatusDescription",header:"x-ms-copy-status-description"`
+	LeaseStatus           string   `xml:"LeaseStatus",header:"x-ms-lease-status"`
 }
 
 // BlobHeaders contains various properties of a blob and is an entry
